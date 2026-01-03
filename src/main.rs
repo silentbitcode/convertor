@@ -1,7 +1,7 @@
 use std::io;
 
 fn main() {
-    loop {
+    loop { //control flow
         println!("Enter a number you want to convert, or type q to quit");
         let mut value = String::new();
         io::stdin().read_line(&mut value).unwrap();
@@ -11,7 +11,7 @@ fn main() {
         }
         let x: i64 = match value.parse() {
             Ok(v) => v,
-            Err(_) => {
+            Err(_) => { //error handling
                 println!("Invalid number, Try Again!");
                 continue;
             }
@@ -24,7 +24,7 @@ fn main() {
 
         let mut choice = String::new();
         io::stdin().read_line(&mut choice).unwrap();
-
+//match..
         match choice.trim() {
             "1" => println!("{}metres = {} km", x, m_to_km(x)),
             "2" => println!("{}km = {} metres", x, km_to_m(x)),
